@@ -1,6 +1,7 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QPainter>
+#include <QString>
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -19,8 +20,9 @@ void Dialog::paintEvent(QPaintEvent *)
     QPainter painter(this);
     QPixmap pix;
     bool getpng = true;
-    getpng = pix.load("D:/work/painter_2/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/debug/image/logo.png");
+    QString st = QCoreApplication::applicationDirPath();
+    getpng = pix.load("../../screem.png");
     if (getpng)
-    painter.drawPixmap(0, 0, 129, 66, pix);
+    painter.drawPixmap(0, 0, 300, 120, pix);
 
 }
